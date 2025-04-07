@@ -1,7 +1,7 @@
 package Sistema_Venda_Ingresso;
 
 public class Evento implements Imprimivel {
-    //Atributos de Evento
+    //Atributos privados do Evento
     private Integer id;
     private String nome;
     private String tipo;
