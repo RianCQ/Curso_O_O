@@ -34,15 +34,11 @@ public class Cliente implements Imprimivel {
     public String getEmail() {
         return email;
     }
-    //Autentificador de Senha
-    public Boolean verificarSenha(String senha) {
-        if(senha == this.senha){
-            return true;
-        }else{
-            return false;
-        }
+    //Autentificador de Senha, utilizado para verificar se a senha informada é igual a senha do cliente
+    public boolean verificarSenha(String senha) {
+        return this.senha.equals(senha);
     }
-    //Imprimir a conta do cliente
+    //Imprimir os dados da conta do cliente
     //Implementação da interface Imprimivel
     @Override
     public void imprimir() {
