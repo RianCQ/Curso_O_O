@@ -51,7 +51,7 @@ public class Evento implements Imprimivel {
     public Double getValorIngressos() {
         return valorIngresso;
     }
-    //Métodos para manipulação da quantidade de ingressos disponíveis e vendidos
+    //Métodos para acesso e manipulação da quantidade de ingressos disponíveis e vendidos
     public Integer getQuantidadeIngressosDisponiveis() {
         return quantidadeIngressosDisponiveis;
     }  
