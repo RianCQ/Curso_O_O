@@ -1,7 +1,7 @@
 package Sistema_Venda_Ingresso;
 
 public class Cliente implements Imprimivel {
-    //Atributos de Cliente
+    //Atributos privados de Cliente
     private Integer id;
     private String nome;
     private String cpf;
