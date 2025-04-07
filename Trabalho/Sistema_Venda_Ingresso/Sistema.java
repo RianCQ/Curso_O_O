@@ -7,7 +7,8 @@ import java.util.List;
 
 public class Sistema implements Imprimivel {
     //Atributos privados estáticos do Sistema
-    //Agregação de Evento, Cliente e Venda
+    //Coleções Map e List
+    //Agregam as classes Evento, Cliente e Venda à classe Sistema
     private static Map<Integer, Evento> eventos;
     private static Map<Integer, Cliente> clientes;
     private static List<Venda> vendasIngressos;
