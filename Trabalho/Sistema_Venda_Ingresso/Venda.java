@@ -2,7 +2,7 @@ package Sistema_Venda_Ingresso;
 
 import java.util.Date;
 
-public class Venda {
+public class Venda implements Imprimivel {
     //Atributos de Venda
     private static int id = 0; // ID da venda
     private int idVenda; // ID único de cada objeto venda
@@ -42,7 +42,9 @@ public class Venda {
         return dataVenda;
     }
     //Método para imprimir os dados da venda
-    public void imprimirVenda() {
+    //Implementação da interface Imprimivel
+    @Override
+    public void imprimir() {
         System.out.println("Cliente: " + cliente.getNome());
         System.out.println("Evento: " + evento.getNome());
         System.out.println("Quantidade de ingressos: " + quantidadeIngressos);

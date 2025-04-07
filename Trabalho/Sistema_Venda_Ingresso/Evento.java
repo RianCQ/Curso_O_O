@@ -1,6 +1,6 @@
 package Sistema_Venda_Ingresso;
 
-public class Evento {
+public class Evento implements Imprimivel {
     //Atributos de Evento
     private Integer id;
     private String nome;
@@ -51,6 +51,7 @@ public class Evento {
     public Double getValorIngressos() {
         return valorIngresso;
     }
+    //Métodos para manipulação da quantidade de ingressos disponíveis e vendidos
     public Integer getQuantidadeIngressosDisponiveis() {
         return quantidadeIngressosDisponiveis;
     }  
@@ -68,7 +69,9 @@ public class Evento {
         return valorIngresso * quantidadeIngressosVendidos;
     }
     //Imprimir os dados do evento
-    public void imprimirRelatorio(){
+    //Implementação da interface Imprimivel
+    @Override
+    public void imprimir(){
         System.out.println("-----Relatório de Evento-----");
         System.out.println("ID: " + id);
         System.out.println("Nome: " + nome);

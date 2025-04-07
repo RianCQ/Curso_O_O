@@ -1,6 +1,6 @@
 package Sistema_Venda_Ingresso;
 
-public class Cliente {
+public class Cliente implements Imprimivel {
     //Atributos de Cliente
     private Integer id;
     private String nome;
@@ -18,7 +18,7 @@ public class Cliente {
         this.email = email;
         this.senha = senha;
     }
-    //Getters e Setters de Cliente
+    //Getters de Cliente
     public Integer getId() {
         return id;
     }
@@ -43,7 +43,9 @@ public class Cliente {
         }
     }
     //Imprimir a conta do cliente
-    public void visualizarCliente() {
+    //Implementação da interface Imprimivel
+    @Override
+    public void imprimir() {
         System.out.println("ID: " + id);
         System.out.println("Nome: " + nome);
         System.out.println("CPF: " + cpf);

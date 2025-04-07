@@ -5,8 +5,9 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sistema {
+public class Sistema implements Imprimivel {
     //Atributos do Sistema
+    //Agregação de Evento, Cliente e Venda
     private static Map<Integer, Evento> eventos;
     private static Map<Integer, Cliente> clientes;
     private static List<Venda> vendasIngressos;
@@ -22,13 +23,67 @@ public class Sistema {
         eventos.put(evento.getId(),evento);
     }
     public void cancelarEvento(Evento evento) {
+        if(eventos.get(evento.getId()) == null) {
+            System.out.println("Evento não cadastrado.");
+            return;
+        }
         eventos.remove(evento.getId());
     }
     public void cadastrarCliente(Cliente cliente) {
         clientes.put(cliente.getId(),cliente);
     }
     public void removerCliente(Cliente cliente) {
+        if(clientes.get(cliente.getId()) == null) {
+            System.out.println("Cliente não cadastrado.");
+            return;
+        }
         clientes.remove(cliente.getId());
+    }
+    //Getters do Sistema
+    public Evento getEventos(Integer id) {
+        if (eventos.get(id) == null) {
+            System.out.println("Evento não cadastrado.");
+            return null;
+        }
+        return eventos.get(id);
+    }
+    //Sobrecarregar o método getEventos para retornar o ID do evento
+    public Integer getEventos(Evento evento) {
+        if (eventos.get(evento.getId()) == null) {
+            System.out.println("Evento não cadastrado.");
+            return null;
+        }
+        return eventos.get(evento.getId()).getId();
+    }
+    public Cliente getClientes(Integer id) {
+        if (clientes.get(id) == null) {
+            System.out.println("Cliente não cadastrado.");
+            return null;
+        }
+        return clientes.get(id);
+    }
+    //Sobrecarregar o método getClientes para retornar o ID do cliente
+    public Integer getClientes(Cliente cliente) {
+        if (eventos.get(cliente.getId()) == null) {
+            System.out.println("Evento não cadastrado.");
+            return null;
+        }
+        return eventos.get(cliente.getId()).getId();
+    }
+    public Venda getVendas(Integer id) {
+        if (vendasIngressos.get(id) == null) {
+            System.out.println("Venda não cadastrada.");
+            return null;
+        }
+        return vendasIngressos.get(id);
+    }
+    //Sobrecarregar o método getVendasIngressos para retornar o ID da venda
+    public Integer getVendas(Venda venda) {
+        if (eventos.get(venda.getIdVenda()) == null) {
+            System.out.println("Evento não cadastrado.");
+            return null;
+        }
+        return eventos.get(venda.getIdVenda()).getId();
     }
     //Registra a venda de ingressos para um evento
     public Venda comprar(Cliente cliente, String senha, Evento evento, Integer quantidade) {
@@ -87,16 +142,18 @@ public class Sistema {
         return eventos.get(evento.getId()).receitaEvento();
     }
     //Imprime um relatório geral de todos os eventos e clientes cadastrados no sistema
-    public void relatorioGeral(){
+    //Implementação da interface Imprimivel
+    @Override
+    public void imprimir(){
         System.out.println("--------Relatório Geral de Eventos--------");
         for (Integer id : eventos.keySet()) {
             Evento evento = eventos.get(id);
-            evento.imprimirRelatorio();
+            evento.imprimir();
         }
         System.out.println("--------Relatório Geral de Clientes--------");
         for (Integer id : clientes.keySet()) {
             Cliente cliente = clientes.get(id);
-            cliente.visualizarCliente();
+            cliente.imprimir();
         }
     }
 }

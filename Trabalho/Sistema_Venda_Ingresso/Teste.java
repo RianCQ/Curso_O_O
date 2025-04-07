@@ -16,7 +16,8 @@ public class Teste {
         sistema.comprar(clienteTwo, "Gato1234", eventoA, 3);
         sistema.comprar(clienteTwo, "Gato1234", eventoA, 3);
         sistema.comprar(clienteTwo, "Cao1234", eventoB, 3);
-        sistema.relatorioGeral();
+        sistema.getVendas(0).imprimir();
         System.out.println(sistema.calcularReceita(eventoB));
+        System.out.println(sistema.getVendas(2).getDataVenda());
     }
 }
