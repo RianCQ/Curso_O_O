@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sistema implements Imprimivel {
-    //Atributos Estáticos do Sistema
+    //Atributos privados estáticos do Sistema
     //Agregação de Evento, Cliente e Venda
     private static Map<Integer, Evento> eventos;
     private static Map<Integer, Cliente> clientes;
