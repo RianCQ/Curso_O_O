@@ -20,7 +20,7 @@ public class Venda implements Imprimivel {
         this.evento = evento;
         this.quantidadeIngressos = quantidadeIngressos;
         this.valorTotal = evento.getValorIngressos() * quantidadeIngressos;
-        this.dataVenda = new Date(); 
+        this.dataVenda = new Date(); // Armazena a data atual da venda
     }
     //Getters de Venda
     public Integer getIdVenda() {
@@ -45,6 +45,7 @@ public class Venda implements Imprimivel {
     //Implementação da interface Imprimivel
     @Override
     public void imprimir() {
+        System.out.println("Venda ID: " + idVenda);
         System.out.println("Cliente: " + cliente.getNome());
         System.out.println("Evento: " + evento.getNome());
         System.out.println("Quantidade de ingressos: " + quantidadeIngressos);
