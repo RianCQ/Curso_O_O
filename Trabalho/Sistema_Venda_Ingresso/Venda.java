@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Venda implements Imprimivel {
     //Atributos de Venda
-    private static int id = 0; // ID da venda
-    private int idVenda; // ID único de cada objeto venda
+    private static int id = 0; // ID da venda, contador estático que gera idVenda indivíduais para cada objeto Venda
+    private int idVenda; // ID único de cada objeto Venda
     private Cliente cliente;
     private Evento evento;
     private int quantidadeIngressos;
