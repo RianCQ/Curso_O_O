@@ -19,10 +19,11 @@ public class Sistema implements Imprimivel {
         Sistema.clientes = new HashMap<>();
         Sistema.vendasIngressos = new ArrayList<>();
     }
-    //Métodos para cadastrar e remover eventos e clientes
+    //Métodos para cadastrar evento
     public void cadastrarEvento(Evento evento) {
         eventos.put(evento.getId(),evento);
     }
+    //Método para remover evento
     public void cancelarEvento(Evento evento) {
         if(eventos.get(evento.getId()) == null) {
             System.out.println("Evento não cadastrado.");
@@ -30,9 +31,11 @@ public class Sistema implements Imprimivel {
         }
         eventos.remove(evento.getId());
     }
+    //Método para cadastrar cliente
     public void cadastrarCliente(Cliente cliente) {
         clientes.put(cliente.getId(),cliente);
     }
+    //Método para remover cliente
     public void removerCliente(Cliente cliente) {
         if(clientes.get(cliente.getId()) == null) {
             System.out.println("Cliente não cadastrado.");
@@ -78,14 +81,7 @@ public class Sistema implements Imprimivel {
         }
         return vendasIngressos.get(id);
     }
-    //Sobrecarregar o método getVendasIngressos para retornar o ID da venda
-    public Integer getVendas(Venda venda) {
-        if (eventos.get(venda.getIdVenda()) == null) {
-            System.out.println("Evento não cadastrado.");
-            return null;
-        }
-        return eventos.get(venda.getIdVenda()).getId();
-    }
+    
     //Registra a venda de ingressos para um evento
     public Venda comprar(Cliente cliente, String senha, Evento evento, Integer quantidade) {
         if (quantidade <= 0) {
@@ -126,7 +122,7 @@ public class Sistema implements Imprimivel {
         }
         if (evento.getQuantidadeIngressosDisponiveis() == 0) {
             System.out.println("Ingressos esgotados.");
-            return null;
+            return 0;
         }
         return eventos.get(evento.getId()).getQuantidadeIngressosDisponiveis();
     }

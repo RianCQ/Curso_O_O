@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Venda implements Imprimivel {
     //Atributos de Venda
-    private static int id = 0; // ID da venda, contador estático que gera idVenda indivíduais para cada objeto Venda
-    private int idVenda; // ID único de cada objeto Venda
+    private static int id = 0; // id, contador estático que gera idVenda indivíduais para cada objeto Venda
+    private int idVenda; // id único de cada objeto Venda
     private Cliente cliente;
     private Evento evento;
     private int quantidadeIngressos;
@@ -14,13 +14,13 @@ public class Venda implements Imprimivel {
 
     //Construtor de Venda
     public Venda(Cliente cliente, Evento evento, int quantidadeIngressos) {
-        this.idVenda = id; 
-        ++id; // Incrementa o ID da venda
+        this.idVenda = id; // Atribui o valor atual de id do contador como idVenda
+        ++id; // Incrementa o id para ser atribuido ao próximo objeto Venda
         this.cliente = cliente;
         this.evento = evento;
         this.quantidadeIngressos = quantidadeIngressos;
         this.valorTotal = evento.getValorIngressos() * quantidadeIngressos;
-        this.dataVenda = new Date(); // Armazena a data atual da venda
+        this.dataVenda = new Date(); // Armazena a data e hora do momento da venda
     }
     //Getters de Venda
     public Integer getIdVenda() {

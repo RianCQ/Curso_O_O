@@ -34,7 +34,7 @@ public class Cliente implements Imprimivel {
     public String getEmail() {
         return email;
     }
-    //Autentificador de Senha, utilizado para verificar se a senha informada é igual a senha do cliente
+    //Autentificador de senha, utilizado na verificação se a senha informada é igual à registrada para o cliente
     public boolean verificarSenha(String senha) {
         return this.senha.equals(senha);
     }

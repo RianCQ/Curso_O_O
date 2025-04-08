@@ -38,5 +38,11 @@ public class Teste {
         System.out.println(sistema.getEventos(1).getNome());
         
         System.out.println(sistema.getVendas(2).getCliente().getNome());
+
+        sistema.getVendas(2).imprimir();
+
+        sistema.getEventos(1).imprimir();
+
+        sistema.getClientes(4).imprimir();
     }
 }
